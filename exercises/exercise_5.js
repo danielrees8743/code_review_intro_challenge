@@ -1,4 +1,4 @@
-const characters = require("../data/characters.json");
+const characters = require('../data/characters.json');
 
 // TODO: return all characters that :
 // - birth_year is known
@@ -15,7 +15,20 @@ const characters = require("../data/characters.json");
  */
 
 const formatCharacters = () => {
-  //  YOUR CODE HERE
+  return characters
+    .map((character) => ({
+      name: character.name,
+      height: character.height,
+      mass: character.mass,
+      gender: character.gender,
+      birth_year: character.birth_year,
+    }))
+    .filter(
+      (character) =>
+        character.birth_year !== 'unknown' &&
+        character.gender === 'male' &&
+        character.height > 200
+    );
 };
 
 module.exports = formatCharacters;
