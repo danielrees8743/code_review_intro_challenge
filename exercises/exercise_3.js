@@ -6,14 +6,16 @@ const characters = require('../data/characters.json');
 const charactersWithMediumHeight = () => {
   // YOUR CODE HERE
   // YOU CAN CHANGE ANY CODE INSIDE THE FUNCTION
+
   const MIN_HEIGHT = 180;
-  const MAX_HEIGHT = 201;
+  const MAX_HEIGHT = 200;
+
   return characters.filter(
     (character) =>
-      character.height !== 'unknown' &&
-      character.height >= MIN_HEIGHT &&
-      character.height <= MAX_HEIGHT
+      character.height > MIN_HEIGHT && character.height < MAX_HEIGHT
   );
 };
+
+console.log(charactersWithMediumHeight());
 
 module.exports = charactersWithMediumHeight;
