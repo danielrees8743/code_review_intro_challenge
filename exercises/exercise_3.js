@@ -16,6 +16,4 @@ const charactersWithMediumHeight = () => {
   );
 };
 
-console.log(charactersWithMediumHeight());
-
 module.exports = charactersWithMediumHeight;
