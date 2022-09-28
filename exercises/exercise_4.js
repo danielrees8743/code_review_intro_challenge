@@ -6,13 +6,11 @@ const characters = require('../data/characters.json');
 // female
 
 const charactersFemaleBlueEyesFairSkin = () => {
-  // YOUR CODE HERE
-  // YOU CAN CHANGE ANYTHING INSIDE THE FUNCTION
   const SKIN = 'fair';
   const EYES = 'blue';
   const SEX = 'female';
 
-  characters.filter(
+  return characters.filter(
     (character) =>
       character.skin_color === SKIN &&
       character.eye_color === EYES &&
