@@ -1,5 +1,5 @@
-const characters = require("../data/characters.json");
-const planets = require("../data/planets.json");
+const characters = require('../data/characters.json');
+const planets = require('../data/planets.json');
 // return all characters,
 // but keep only the following fields:
 /*
@@ -21,7 +21,13 @@ const planets = require("../data/planets.json");
 */
 
 const charactersWithHomeWorld = () => {
-  //  YOUR CODE HERE
+  return characters.map((character) => ({
+    name: character.name,
+    homeworld: planets.find((planet) => planet.url === character.homeworld)
+      .name,
+  }));
 };
+
+console.log(charactersWithHomeWorld());
 
 module.exports = charactersWithHomeWorld;
