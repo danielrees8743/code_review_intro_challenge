@@ -1,4 +1,4 @@
-const characters = require("../data/characters.json");
+const characters = require('../data/characters.json');
 
 // TODO: return all characters.
 // Include only the following fields:
@@ -19,7 +19,7 @@ const characters = require("../data/characters.json");
 
 // The structure should be like this:
 
-/* 
+/*
   {
     name: "Owen Lars",
     traits: {
@@ -43,7 +43,14 @@ const characters = require("../data/characters.json");
 */
 
 const formatCharacters = () => {
-  //  YOUR CODE HERE
+  return characters.map((character) => ({
+    name: character.name,
+    trait: {
+      height: character.height,
+      mass: character.mass,
+      color: [character.hair_color, character.skin_color, character.eye_color],
+    },
+  }));
 };
 
 module.exports = formatCharacters;
