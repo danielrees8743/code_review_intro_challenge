@@ -16,13 +16,10 @@ const characters = require('../data/characters.json');
 
 const formatCharacters = () => {
   return characters
-    .map((character) => ({
-      name: character.name,
-      height: character.height,
-      mass: character.mass,
-      gender: character.gender,
-      birth_year: character.birth_year,
-    }))
+    .map((character) => {
+      const { name, height, mass, gender, birth_year } = character;
+      return { name, height, mass, gender, birth_year };
+    })
     .filter(
       (character) =>
         character.birth_year !== 'unknown' &&
@@ -30,5 +27,7 @@ const formatCharacters = () => {
         character.height > 200
     );
 };
+
+console.log(formatCharacters());
 
 module.exports = formatCharacters;
