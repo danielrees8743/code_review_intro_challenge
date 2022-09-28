@@ -28,6 +28,4 @@ const charactersWithHomeWorld = () => {
   }));
 };
 
-console.log(charactersWithHomeWorld());
-
 module.exports = charactersWithHomeWorld;
